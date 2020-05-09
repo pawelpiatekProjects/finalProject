@@ -1,8 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import {ScrollView, Button} from 'react-native';
 import styled from 'styled-components';
 import BurgerIngredientsButtons from '../components/burgerIngredientsButtons';
+import * as variables from '../assets/variables';
+import CustomButton from '../components/button';
 
 const BurgerIngredientsWrapper = styled.View`
+height: 100%;
+`;
+
+const BurgerWrapper = styled.View`
 
 `;
 
@@ -53,91 +60,150 @@ const Bacon = styled.View`
     margin: 2px auto;
 `;
 
+const Paragraph = styled.Text`
+text-align: center;
+`;
+
+
+
 export default function BurgerIngredients() {
     const [meat, setMeat] = useState(0);
     const [cheese, setCheese] = useState(0);
     const [bacon, setBacon] = useState(0);
     const [salad, setSalad] = useState(0);
+    const [price, setPrice] = useState(0);
 
-    const meatArr=[];
-    const cheeseArr=[];
-    const baconArr=[];
-    const saladArr=[];
+    useEffect(() => {
+        setPrice(0);
+        setCheese(0);
+        setMeat(0);
+        setBacon(0);
+        setSalad(0);
+    }, [])
 
-    for(let i=0;i<meat;i++){
+    const meatArr = [];
+    const cheeseArr = [];
+    const baconArr = [];
+    const saladArr = [];
+
+    for (let i = 0; i < meat; i++) {
         meatArr.push(<Meat/>)
     }
 
-    for(let i=0;i<cheese;i++){
+    for (let i = 0; i < cheese; i++) {
         cheeseArr.push(<Cheese/>)
     }
 
-    for(let i=0;i<salad;i++){
+    for (let i = 0; i < salad; i++) {
         baconArr.push(<Salad/>)
     }
 
-    for(let i=0;i<bacon;i++){
+    for (let i = 0; i < bacon; i++) {
         saladArr.push(<Bacon/>)
     }
 
-    const addMeat = () =>{
-        const oldMeat= meat
-        setMeat(oldMeat+1);
+    const addMeat = () => {
+        const oldMeat = meat
+        setMeat(oldMeat + 1);
+        setPrice(price + 2);
     }
 
-    const removeMeat = () =>{
-        const oldMeat= meat
-        setMeat(oldMeat-1);
+    const removeMeat = () => {
+        const oldMeat = meat
+        if (meat > 0) {
+            setMeat(oldMeat - 1);
+        }
+        if (price >= 2) {
+            setPrice(price - 2)
+        }
+
     }
 
-    const addCheese = () =>{
+    const addCheese = () => {
         const oldCheese = cheese;
-        setCheese(oldCheese+1);
+        setCheese(oldCheese + 1);
+        setPrice(price + 1);
     }
 
-    const removeCheese = () =>{
+    const removeCheese = () => {
         const oldCheese = cheese;
-        setCheese(oldCheese-1);
+        if (cheese > 0) {
+            setCheese(oldCheese - 1);
+        }
+        if (price >= 1) {
+            setPrice(price - 1)
+        }
+
     }
 
-    const addSalad = () =>{
+    const addSalad = () => {
         const oldSalad = salad;
-        setSalad(oldSalad+1);
+        setSalad(oldSalad + 1);
+        setPrice(price + 0.5)
     }
 
-    const removeSalad = () =>{
+    const removeSalad = () => {
         const oldSalad = salad;
-        setSalad(oldSalad-1);
+        if (salad > 0) {
+            setSalad(oldSalad - 1);
+        }
+        if (price >= 0.5) {
+            setPrice(price - 0.5);
+        }
+
     }
 
-    const addBacon = () =>{
+    const addBacon = () => {
         const oldBacon = bacon;
-        setBacon(oldBacon+1);
+        setBacon(oldBacon + 1);
+        setPrice(price + 0.7);
     }
 
-    const removeBacon = () =>{
+    const removeBacon = () => {
         const oldBacon = bacon;
-        setBacon(oldBacon-1);
+        if (bacon > 0) {
+            setBacon(oldBacon - 1);
+        }
+        if (price >= 0.7) {
+            setPrice(price - 0.7);
+        }
+
     }
 
+    let ingredients = <Paragraph>Add ingredients...</Paragraph>;
+    if (salad > 0 || cheese > 0 || bacon > 0 || meat > 0) {
+        ingredients = null;
+    }
+//todo: fix price
     return (
+
         <BurgerIngredientsWrapper>
-            <BurgerTop></BurgerTop>
-            {meatArr}
-            {cheeseArr}
-            {saladArr}
-            {baconArr}
-            <BurgerBottom></BurgerBottom>
-            <BurgerIngredientsButtons
-             addMeat={addMeat}
-             removeMeat={removeMeat}
-             addCheese={addCheese}
-             removeCheese={removeCheese}
-             addSalad={addSalad}
-             removeSalad={removeSalad}
-             addBacon={addBacon}
-             removeBacon={removeBacon}
-            />
+            <ScrollView>
+
+                    <BurgerWrapper>
+                        <BurgerTop></BurgerTop>
+                        {ingredients}
+                        {meatArr}
+                        {cheeseArr}
+                        {saladArr}
+                        {baconArr}
+                        <BurgerBottom></BurgerBottom>
+                    </BurgerWrapper>
+
+                <Paragraph>{price.toFixed(2)}$</Paragraph>
+                <BurgerIngredientsButtons
+                    addMeat={addMeat}
+                    removeMeat={removeMeat}
+                    addCheese={addCheese}
+                    removeCheese={removeCheese}
+                    addSalad={addSalad}
+                    removeSalad={removeSalad}
+                    addBacon={addBacon}
+                    removeBacon={removeBacon}
+                />
+                <CustomButton text="Order"/>
+            </ScrollView>
         </BurgerIngredientsWrapper>
+
     )
 }
