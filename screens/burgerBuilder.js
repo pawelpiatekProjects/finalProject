@@ -12,7 +12,7 @@ const Title = styled.Text`
 export default function BurgerBuilder() {
     return(
         <Container>
-            <Title>Home</Title>
+            <Title>Burger Builder</Title>
         </Container>
     )
 }
