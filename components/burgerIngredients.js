@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
+import BurgerIngredientsButtons from '../components/burgerIngredientsButtons';
 
 const BurgerIngredientsWrapper = styled.View`
 
@@ -53,14 +54,90 @@ const Bacon = styled.View`
 `;
 
 export default function BurgerIngredients() {
-    return(
+    const [meat, setMeat] = useState(0);
+    const [cheese, setCheese] = useState(0);
+    const [bacon, setBacon] = useState(0);
+    const [salad, setSalad] = useState(0);
+
+    const meatArr=[];
+    const cheeseArr=[];
+    const baconArr=[];
+    const saladArr=[];
+
+    for(let i=0;i<meat;i++){
+        meatArr.push(<Meat/>)
+    }
+
+    for(let i=0;i<cheese;i++){
+        cheeseArr.push(<Cheese/>)
+    }
+
+    for(let i=0;i<salad;i++){
+        baconArr.push(<Salad/>)
+    }
+
+    for(let i=0;i<bacon;i++){
+        saladArr.push(<Bacon/>)
+    }
+
+    const addMeat = () =>{
+        const oldMeat= meat
+        setMeat(oldMeat+1);
+    }
+
+    const removeMeat = () =>{
+        const oldMeat= meat
+        setMeat(oldMeat-1);
+    }
+
+    const addCheese = () =>{
+        const oldCheese = cheese;
+        setCheese(oldCheese+1);
+    }
+
+    const removeCheese = () =>{
+        const oldCheese = cheese;
+        setCheese(oldCheese-1);
+    }
+
+    const addSalad = () =>{
+        const oldSalad = salad;
+        setSalad(oldSalad+1);
+    }
+
+    const removeSalad = () =>{
+        const oldSalad = salad;
+        setSalad(oldSalad-1);
+    }
+
+    const addBacon = () =>{
+        const oldBacon = bacon;
+        setBacon(oldBacon+1);
+    }
+
+    const removeBacon = () =>{
+        const oldBacon = bacon;
+        setBacon(oldBacon-1);
+    }
+
+    return (
         <BurgerIngredientsWrapper>
             <BurgerTop></BurgerTop>
-            <Salad></Salad>
-            <Bacon></Bacon>
-            <Cheese></Cheese>
-            <Meat></Meat>
+            {meatArr}
+            {cheeseArr}
+            {saladArr}
+            {baconArr}
             <BurgerBottom></BurgerBottom>
+            <BurgerIngredientsButtons
+             addMeat={addMeat}
+             removeMeat={removeMeat}
+             addCheese={addCheese}
+             removeCheese={removeCheese}
+             addSalad={addSalad}
+             removeSalad={removeSalad}
+             addBacon={addBacon}
+             removeBacon={removeBacon}
+            />
         </BurgerIngredientsWrapper>
     )
 }

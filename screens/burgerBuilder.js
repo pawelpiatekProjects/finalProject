@@ -21,7 +21,6 @@ height: 200px;
 export default function BurgerBuilder() {
     return(
         <Container>
-            <Title>Burger Builder</Title>
             <BurgerIngredients/>
         </Container>
     )
