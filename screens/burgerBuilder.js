@@ -1,10 +1,11 @@
 import React from 'react';
-
+import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import BurgerIngredients from '../components/burgerIngredients';
+import CustomButton from '../components/button';
 
 const Container = styled.View`
-
+height: 100%;
 `;
 
 const Title = styled.Text`
@@ -17,12 +18,17 @@ height: 200px;
 `;
 
 
+export default function BurgerBuilder({navigation}) {
 
-
-export default function BurgerBuilder() {
-    return(
+    const order = () => {
+        navigation.navigate('Order');
+    }
+    return (
         <Container>
-            <BurgerIngredients/>
+            <ScrollView>
+                <BurgerIngredients/>
+                <CustomButton text="Order" press={order}/>
+            </ScrollView>
         </Container>
     )
 }

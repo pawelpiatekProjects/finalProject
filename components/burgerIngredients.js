@@ -6,7 +6,7 @@ import * as variables from '../assets/variables';
 import CustomButton from '../components/button';
 
 const BurgerIngredientsWrapper = styled.View`
-height: 100%;
+
 `;
 
 const BurgerWrapper = styled.View`
@@ -66,7 +66,7 @@ text-align: center;
 
 
 
-export default function BurgerIngredients() {
+export default function BurgerIngredients({navigation}) {
     const [meat, setMeat] = useState(0);
     const [cheese, setCheese] = useState(0);
     const [bacon, setBacon] = useState(0);
@@ -170,6 +170,8 @@ export default function BurgerIngredients() {
 
     }
 
+
+
     let ingredients = <Paragraph>Add ingredients...</Paragraph>;
     if (salad > 0 || cheese > 0 || bacon > 0 || meat > 0) {
         ingredients = null;
@@ -201,7 +203,6 @@ export default function BurgerIngredients() {
                     addBacon={addBacon}
                     removeBacon={removeBacon}
                 />
-                <CustomButton text="Order"/>
             </ScrollView>
         </BurgerIngredientsWrapper>
 

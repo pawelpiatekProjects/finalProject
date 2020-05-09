@@ -18,9 +18,9 @@ color: ${variables.primaryGrey};
 font-size: 20px;
 `;
 
-export default function Button({text}) {
+export default function Button({text, press}) {
     return(
-        <ButtonWrapper>
+        <ButtonWrapper onPress={press}>
             <Text>{text}</Text>
         </ButtonWrapper>
     )
