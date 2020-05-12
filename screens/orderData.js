@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import OrderForm from '../components/orderForm';
+import {Header} from '../styles/globalStyle';
 
 
 const OrderDataWrapper = styled.View`
 
 `;
 
-const Header = styled.Text`
 
-`;
 
 export default function OrderData() {
   return(
