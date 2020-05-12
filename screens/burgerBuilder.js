@@ -44,11 +44,9 @@ export default function BurgerBuilder({navigation}) {
     }
 
     const removeMeat = () =>{
-        if(meat>0){
+        if(meat>0 && price>=2){
             setMeat(prevMeat => prevMeat -1);
-        }
-        if(price>=2){
-            setPrice(prevPrice => prevPrice -2)
+            setPrice(prevPrice => prevPrice -2);
         }
     }
 
@@ -58,12 +56,11 @@ export default function BurgerBuilder({navigation}) {
     }
 
     const removeCheese =() =>{
-        if(cheese>0){
+        if(cheese>0 && price>=1){
             setCheese(prevCheese => prevCheese -1);
-        }
-        if(price>=1){
             setPrice(prevPrice => prevPrice -1);
         }
+
     }
 
     const addSalad = () =>{
@@ -72,10 +69,8 @@ export default function BurgerBuilder({navigation}) {
     }
 
     const removeSalad = () =>{
-        if(salad>0){
+        if(salad>0 && price>=0.5){
             setSalad(prevSalad => prevSalad-1);
-        }
-        if(price>=0.5){
             setPrice(prevPrice => prevPrice - 0.5);
         }
     }
@@ -87,12 +82,11 @@ export default function BurgerBuilder({navigation}) {
 
 
     const removeBacon = () =>{
-        if(bacon>0){
+        if(bacon>0 && price>=0.7){
             setBacon(prevBacon => prevBacon -1);
-        }
-        if(price>=0.7){
             setPrice(prevPrice => prevPrice -0.7)
         }
+
     }
 
 
@@ -114,6 +108,7 @@ export default function BurgerBuilder({navigation}) {
                     removeBacon={removeBacon}
                     price={price}
                 />
+                {/*todo: set disabled*/}
                 <CustomButton text="Order" press={order}/>
             </ScrollView>
         </Container>

@@ -47,6 +47,15 @@ export default function Order({navigation}) {
     for (let i = 0; i < burger.bacon; i++) {
         saladArr.push(<Bacon/>)
     }
+
+    const purchase = ()=>{
+        navigation.navigate('OrderData', {
+            burger: burger,
+            price: price
+        })
+
+    }
+
     return(
         <OrderWrapper>
             <Header>Your Order</Header>
@@ -57,7 +66,7 @@ export default function Order({navigation}) {
             {saladArr}
             <BurgerBottom/>
             <Price>{price}0$</Price>
-            <CustomButon text="Purchase" press={()=>{}}/>
+            <CustomButon text="Purchase" press={purchase}/>
         </OrderWrapper>
     )
 }

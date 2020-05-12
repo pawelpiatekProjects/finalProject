@@ -3,6 +3,7 @@ import {createAppContainer} from "react-navigation";
 import Home from '../screens/home';
 import BurgerBuilder from '../screens/burgerBuilder';
 import Order from '../screens/order';
+import OrderData from '../screens/orderData';
 
 
 
@@ -15,6 +16,9 @@ const screens ={
     },
     Order: {
         screen: Order
+    },
+    OrderData: {
+        screen: OrderData
     }
 }
 
