@@ -66,20 +66,9 @@ text-align: center;
 
 
 
-export default function BurgerIngredients({navigation}) {
-    const [meat, setMeat] = useState(0);
-    const [cheese, setCheese] = useState(0);
-    const [bacon, setBacon] = useState(0);
-    const [salad, setSalad] = useState(0);
-    const [price, setPrice] = useState(0);
-
-    useEffect(() => {
-        setPrice(0);
-        setCheese(0);
-        setMeat(0);
-        setBacon(0);
-        setSalad(0);
-    }, [])
+export default function BurgerIngredients({bacon, addBacon, removeBacon,
+                                              cheese, addCheese, removeCheese, salad, addSalad, removeSalad,
+                                              meat, addMeat, removeMeat, price}) {
 
     const meatArr = [];
     const cheeseArr = [];
@@ -102,73 +91,6 @@ export default function BurgerIngredients({navigation}) {
         saladArr.push(<Bacon/>)
     }
 
-    const addMeat = () => {
-        const oldMeat = meat
-        setMeat(oldMeat + 1);
-        setPrice(price + 2);
-    }
-
-    const removeMeat = () => {
-        const oldMeat = meat
-        if (meat > 0) {
-            setMeat(oldMeat - 1);
-        }
-        if (price >= 2) {
-            setPrice(price - 2)
-        }
-
-    }
-
-    const addCheese = () => {
-        const oldCheese = cheese;
-        setCheese(oldCheese + 1);
-        setPrice(price + 1);
-    }
-
-    const removeCheese = () => {
-        const oldCheese = cheese;
-        if (cheese > 0) {
-            setCheese(oldCheese - 1);
-        }
-        if (price >= 1) {
-            setPrice(price - 1)
-        }
-
-    }
-
-    const addSalad = () => {
-        const oldSalad = salad;
-        setSalad(oldSalad + 1);
-        setPrice(price + 0.5)
-    }
-
-    const removeSalad = () => {
-        const oldSalad = salad;
-        if (salad > 0) {
-            setSalad(oldSalad - 1);
-        }
-        if (price >= 0.5) {
-            setPrice(price - 0.5);
-        }
-
-    }
-
-    const addBacon = () => {
-        const oldBacon = bacon;
-        setBacon(oldBacon + 1);
-        setPrice(price + 0.7);
-    }
-
-    const removeBacon = () => {
-        const oldBacon = bacon;
-        if (bacon > 0) {
-            setBacon(oldBacon - 1);
-        }
-        if (price >= 0.7) {
-            setPrice(price - 0.7);
-        }
-
-    }
 
 
 

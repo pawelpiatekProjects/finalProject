@@ -52,10 +52,8 @@ font-size: 20px;
 const buttonSize = 30;
 
 
-export default function BurgerIngredientsButtons({
-                                                     addMeat, removeMeat, addCheese, removeCheese, addSalad, removeSalad,
-                                                     addBacon, removeBacon
-                                                 }) {
+export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese, removeCheese, addSalad, removeSalad,
+                                                     addBacon, removeBacon}) {
     return (
         <Wrapper>
             <HeaderBig>Ingredients</HeaderBig>
