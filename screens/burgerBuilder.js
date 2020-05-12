@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import BurgerIngredients from '../components/burgerIngredients';
@@ -8,21 +8,29 @@ const Container = styled.View`
 height: 100%;
 `;
 
-const Title = styled.Text`
 
-`;
 
-const Img = styled.Image`
-width: 200px;
-height: 200px;
-`;
-
-//todo:  move state here
 export default function BurgerBuilder({navigation}) {
 
     const order = () => {
-        navigation.navigate('Order');
+        navigation.navigate('Order', {
+            burger: {
+                meat: meat,
+                cheese: cheese,
+                salad: salad,
+                bacon: bacon,
+            },
+            price: price
+        });
     }
+
+    useEffect(()=>{
+        setPrice(0);
+        setBacon(0);
+        setMeat(0);
+        setCheese(0);
+        setSalad(0);
+    },[])
 
     const [meat, setMeat] = useState(0);
     const [cheese, setCheese] = useState(0);
