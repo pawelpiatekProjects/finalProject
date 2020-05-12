@@ -2,18 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import {BurgerBottom, BurgerTop, Meat, Cheese, Salad, Bacon} from '../components/ingredients';
 import CustomButon from '../components/button';
+import {Header}  from '../styles/globalStyle';
 
 
 const OrderWrapper = styled.View`
 
 `;
 
-const Header = styled.Text`
-text-align: center;
-font-size: 30px;
-font-weight: bold;
-margin: 20px auto;
-`;
+
 
 const Price = styled.Text`
 text-align: center;
