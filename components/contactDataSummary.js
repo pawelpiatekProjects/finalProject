@@ -6,7 +6,7 @@ import * as variables from '../assets/variables';
 const Title = styled.Text`
 font-size: 25px;
 font-weight: bold;
-width: 60%;
+width: 80%;
 margin: 20px auto;
 color: ${variables.primaryYellow};
 `;
@@ -18,7 +18,7 @@ padding: 30px;
 
 
 const Paragraph = styled.Text`
-width: 60%;
+width: 80%;
 margin: 3px auto;
 font-size: 16px;
 `;
