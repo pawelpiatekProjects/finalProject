@@ -1,90 +1,79 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
+import { TextInput, Text, Button, Alert, StyleSheet } from 'react-native';
 import styled from 'styled-components';
 import {Formik} from "formik";
-import {TextInput, StyleSheet} from 'react-native';
+
 import * as variables from '../assets/variables';
 import CustomButton from '../components/button';
+import * as yup from 'yup'
 
 const FormWrapper = styled.View`
+  background-color: ${variables.white};
+  
+padding: 30px;
+`;
+
+
+
+
+
+const Error = styled.Text`
 
 `;
 
-const FormInput = styled.TextInput`
-padding: 5rem;
-border-bottom-color: ${variables.primaryYellow};
-`;
-
-const Button = styled.Button`
-
-`;
+const onSubmit = (values) => {
+    console.log(values)
+}
 //todo: add disabliing keyboard in form after clicking on screen
+//todo: eneble scrolling in form
 export default function OrderForm() {
-    return(
-        <Formik initialValues={{
-            name: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            city: '',
-            street: '',
-            house: ''
-        }} onSubmit={values=>console.log(values)}>
-            {({ handleChange, handleBlur, handleSubmit, values }) => (
+    return (
+        <Formik
+            initialValues={{ email: '', password: '' }}
+            onSubmit={values => Alert.alert(JSON.stringify(values))}
+            validationSchema={yup.object().shape({
+                email: yup
+                    .string()
+                    .email()
+                    .required(),
+                password: yup
+                    .string()
+                    .min(6)
+                    .required(),
+            })}
+        >
+            {({ values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit }) => (
                 <FormWrapper>
                     <TextInput
-                        placeholder="Name"
                         style={styles.input}
-                        onChangeText={handleChange('name')}
-                        onBlur={handleBlur('name')}
-                        value={values.name}
-                    />
-                    <TextInput
-                        placeholder="Last name"
-                        style={styles.input}
-                        onChangeText={handleChange('lastName')}
-                        onBlur={handleBlur('lastName')}
-                        value={values.lastName}
-                    />
-                    <TextInput
-                        placeholder="E-mail"
-                        style={styles.input}
-                        onChangeText={handleChange('email')}
-                        onBlur={handleBlur('email')}
                         value={values.email}
+                        onChangeText={handleChange('email')}
+                        onBlur={() => setFieldTouched('email')}
+                        placeholder="E-mail"
                     />
+                    {touched.email && errors.email &&
+                    <Text style={{ fontSize: 10, color: 'red' }}>{errors.email}</Text>
+                    }
                     <TextInput
-                        keyboardType="numeric"
-                        placeholder="Phone"
                         style={styles.input}
-                        onChangeText={handleChange('phone')}
-                        onBlur={handleBlur('phone')}
-                        value={values.phone}
+                        value={values.password}
+                        onChangeText={handleChange('password')}
+                        placeholder="Password"
+                        onBlur={() => setFieldTouched('password')}
+                        secureTextEntry={true}
                     />
-                    <TextInput
-                        placeholder="City"
-                        style={styles.input}
-                        onChangeText={handleChange('city')}
-                        onBlur={handleBlur('city')}
-                        value={values.city}
+                    {touched.password && errors.password &&
+                    <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
+                    }
+                    <Button
+                        title='Sign In'
+                        disabled={!isValid}
+                        onPress={handleSubmit}
                     />
-                    <TextInput
-                        placeholder="Street"
-                        style={styles.input}
-                        onChangeText={handleChange('street')}
-                        onBlur={handleBlur('street')}
-                        value={values.street}
-                    />
-                    <TextInput
-                        placeholder="House"
-                        style={styles.input}
-                        onChangeText={handleChange('house')}
-                        onBlur={handleBlur('house')}
-                        value={values.house}
-                    />
-                    <CustomButton press={handleSubmit} text="Submit" />
                 </FormWrapper>
             )}
         </Formik>
+
     )
 }
 
