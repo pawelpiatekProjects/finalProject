@@ -1,11 +1,12 @@
-import React, { Component, Fragment } from 'react';
-import { TextInput, Text, Button, Alert, StyleSheet } from 'react-native';
+import React, {Component, Fragment} from 'react';
+import {TextInput, Text, Button, Alert, StyleSheet} from 'react-native';
 import styled from 'styled-components';
 import {Formik} from "formik";
 
 import * as variables from '../assets/variables';
 import CustomButton from '../components/button';
 import * as yup from 'yup'
+import {View} from "react-native-web";
 
 const FormWrapper = styled.View`
   background-color: ${variables.white};
@@ -13,8 +14,9 @@ const FormWrapper = styled.View`
 padding: 30px;
 `;
 
-
-
+const ButtonContainer = styled.Button`
+margin-top: 30px;
+`;
 
 
 const Error = styled.Text`
@@ -30,7 +32,7 @@ const onSubmit = (values) => {
 }
 //todo: add disabliing keyboard in form after clicking on screen
 //todo: eneble scrolling in form
-export default function OrderForm() {
+export default function OrderForm({setData}) {
     return (
         <Formik
             initialValues={{
@@ -42,7 +44,10 @@ export default function OrderForm() {
                 street: '',
                 house: ''
             }}
-            onSubmit={values => Alert.alert(JSON.stringify(values))}
+            onSubmit={values =>{
+                Alert.alert(JSON.stringify(values));
+                setData(values);
+            } }
             validationSchema={yup.object().shape({
                 email: yup
                     .string()
@@ -68,7 +73,7 @@ export default function OrderForm() {
                     .required(),
             })}
         >
-            {({ values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit }) => (
+            {({values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit}) => (
                 <FormWrapper>
                     <TextInput
                         style={styles.input}
@@ -147,11 +152,14 @@ export default function OrderForm() {
                     {touched.house && errors.house &&
                     <Error>{errors.house}</Error>
                     }
-                    <Button
-                        title='Order'
-                        disabled={!isValid}
-                        onPress={handleSubmit}
-                    />
+
+                        <Button
+                            style={styles.button}
+                            title='Order'
+                            disabled={!isValid}
+                            onPress={handleSubmit}
+                        />
+
                 </FormWrapper>
             )}
         </Formik>
@@ -166,5 +174,8 @@ const styles = StyleSheet.create({
         borderBottomWidth: 3,
         marginHorizontal: 30,
         marginVertical: 30
+    },
+    button: {
+        color: variables.primaryYellow
     }
 })

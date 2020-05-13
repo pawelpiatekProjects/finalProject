@@ -4,6 +4,7 @@ import Home from '../screens/home';
 import BurgerBuilder from '../screens/burgerBuilder';
 import Order from '../screens/order';
 import OrderData from '../screens/orderData';
+import OrderSummary from '../screens/orderSummary';
 
 
 
@@ -19,6 +20,9 @@ const screens ={
     },
     OrderData: {
         screen: OrderData
+    },
+    OrderSummary: {
+        screen: OrderSummary
     }
 }
 
