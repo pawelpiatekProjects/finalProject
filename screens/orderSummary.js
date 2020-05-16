@@ -21,12 +21,26 @@ padding-bottom: 10px;
 `;
 
 
+const db = firebase.database();
+
+
 export default function OrderSummary({navigation}) {
 
     const contactData = navigation.getParam('contactData');
     const burger = navigation.getParam('burger');
     const price = navigation.getParam('price');
     console.log(price);
+
+    const createOrder = () =>{
+        const key = db.ref().child('orders').push().key;
+        db.ref(`orders/${key}`).set({
+            key: key,
+            burger: burger,
+            price: price,
+            contactData: contactData
+        })
+    }
+
     return (
         <OrderSummaryWrapper>
             <ScrollView>
@@ -39,8 +53,7 @@ export default function OrderSummary({navigation}) {
                         price={price}
                     />
                 </SummaryContent>
-                <CustomButton text="Confirm" press={() => {
-                }}/>
+                <CustomButton text="Confirm" press={createOrder}/>
             </ScrollView>
         </OrderSummaryWrapper>
     )
