@@ -5,6 +5,7 @@ import ContactDataSummary from '../components/contactDataSummary';
 import BurgerSummary from '../components/burgerSummary';
 import CustomButton from '../components/button';
 import * as variables from '../assets/variables';
+import firebase from '../firebase';
 
 const OrderSummaryWrapper = styled.View`
 height: 100%;
