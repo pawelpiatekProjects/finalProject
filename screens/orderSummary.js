@@ -39,6 +39,7 @@ export default function OrderSummary({navigation}) {
             price: price,
             contactData: contactData
         })
+        navigation.navigate('OrderConfirm');
     }
 
     return (
