@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {createStackNavigator} from "react-navigation-stack";
 import {createAppContainer} from "react-navigation";
 import * as variables from '../assets/variables';
@@ -7,13 +9,16 @@ import Order from '../screens/order';
 import OrderData from '../screens/orderData';
 import OrderSummary from '../screens/orderSummary';
 import OrderConfirm from '../screens/orderConfirm';
+import Header from '../shared/header';
 
 
 const screens ={
     Home: {
         screen: Home,
-        navigationOptions: {
-            title: null,
+        navigationOptions: ({navigation}) =>{
+            return {
+                headerTitle: ()=> <Header navigation={navigation}/>,
+            }
         }
     },
     BurgerBuilder: {
