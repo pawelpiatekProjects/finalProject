@@ -1,12 +1,20 @@
 import React, {Component, Fragment} from 'react';
-import {TextInput, Text, Button, Alert, StyleSheet, TouchableWithoutFeedback, Keyboard} from 'react-native';
+import {
+    TextInput,
+    Button,
+    ScrollView,
+    StyleSheet,
+    TouchableWithoutFeedback,
+    Keyboard,
+    KeyboardAvoidingView
+} from 'react-native';
 import styled from 'styled-components';
 import {Formik} from "formik";
 
 import * as variables from '../assets/variables';
-import CustomButton from '../components/button';
+
 import * as yup from 'yup'
-import {View} from "react-native-web";
+
 
 const FormWrapper = styled.View`
   background-color: ${variables.white};
@@ -45,7 +53,6 @@ export default function OrderForm({setData}) {
                 house: ''
             }}
             onSubmit={values => {
-                Alert.alert(JSON.stringify(values));
                 setData(values);
             }}
             validationSchema={yup.object().shape({
@@ -74,95 +81,100 @@ export default function OrderForm({setData}) {
             })}
         >
             {({values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit}) => (
-                <TouchableWithoutFeedback onPress={()=>Keyboard.dismiss()}>
-                    <FormWrapper>
-                        <TextInput
-                            style={styles.input}
-                            value={values.name}
-                            onChangeText={handleChange('name')}
-                            placeholder="Name"
-                            onBlur={() => setFieldTouched('name')}
 
-                        />
-                        {touched.name && errors.name &&
-                        <Error>{errors.name}</Error>
-                        }
-                        <TextInput
-                            style={styles.input}
-                            value={values.lastName}
-                            onChangeText={handleChange('lastName')}
-                            placeholder="Last name"
-                            onBlur={() => setFieldTouched('lastName')}
+                <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null} style={styles.scrollKeyboard}>
+                    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+                        <FormWrapper>
+                            <ScrollView>
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.name}
+                                    onChangeText={handleChange('name')}
+                                    placeholder="Name"
+                                    onBlur={() => setFieldTouched('name')}
 
-                        />
-                        {touched.lastName && errors.lastName &&
-                        <Error>{errors.lastName}</Error>
-                        }
-                        <TextInput
-                            style={styles.input}
-                            value={values.email}
-                            onChangeText={handleChange('email')}
-                            onBlur={() => setFieldTouched('email')}
-                            placeholder="E-mail"
-                        />
-                        {touched.email && errors.email &&
-                        <Error>{errors.email}</Error>
-                        }
-                        <TextInput
-                            keyboardType='numeric'
-                            style={styles.input}
-                            value={values.phone}
-                            onChangeText={handleChange('phone')}
-                            placeholder="Phone"
-                            onBlur={() => setFieldTouched('phone')}
+                                />
+                                {touched.name && errors.name &&
+                                <Error>{errors.name}</Error>
+                                }
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.lastName}
+                                    onChangeText={handleChange('lastName')}
+                                    placeholder="Last name"
+                                    onBlur={() => setFieldTouched('lastName')}
 
-                        />
-                        {touched.phone && errors.phone &&
-                        <Error>{errors.phone}</Error>
-                        }
-                        <TextInput
-                            style={styles.input}
-                            value={values.city}
-                            onChangeText={handleChange('city')}
-                            placeholder="City"
-                            onBlur={() => setFieldTouched('city')}
+                                />
+                                {touched.lastName && errors.lastName &&
+                                <Error>{errors.lastName}</Error>
+                                }
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.email}
+                                    onChangeText={handleChange('email')}
+                                    onBlur={() => setFieldTouched('email')}
+                                    placeholder="E-mail"
+                                />
+                                {touched.email && errors.email &&
+                                <Error>{errors.email}</Error>
+                                }
+                                <TextInput
+                                    keyboardType='numeric'
+                                    style={styles.input}
+                                    value={values.phone}
+                                    onChangeText={handleChange('phone')}
+                                    placeholder="Phone"
+                                    onBlur={() => setFieldTouched('phone')}
 
-                        />
-                        {touched.city && errors.city &&
-                        <Error>{errors.city}</Error>
-                        }
-                        <TextInput
-                            style={styles.input}
-                            value={values.street}
-                            onChangeText={handleChange('street')}
-                            placeholder="Street"
-                            onBlur={() => setFieldTouched('street')}
+                                />
+                                {touched.phone && errors.phone &&
+                                <Error>{errors.phone}</Error>
+                                }
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.city}
+                                    onChangeText={handleChange('city')}
+                                    placeholder="City"
+                                    onBlur={() => setFieldTouched('city')}
 
-                        />
-                        {touched.street && errors.street &&
-                        <Error>{errors.street}</Error>
-                        }
-                        <TextInput
-                            style={styles.input}
-                            value={values.house}
-                            onChangeText={handleChange('house')}
-                            placeholder="House"
-                            onBlur={() => setFieldTouched('house')}
+                                />
+                                {touched.city && errors.city &&
+                                <Error>{errors.city}</Error>
+                                }
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.street}
+                                    onChangeText={handleChange('street')}
+                                    placeholder="Street"
+                                    onBlur={() => setFieldTouched('street')}
 
-                        />
-                        {touched.house && errors.house &&
-                        <Error>{errors.house}</Error>
-                        }
+                                />
+                                {touched.street && errors.street &&
+                                <Error>{errors.street}</Error>
+                                }
+                                <TextInput
+                                    style={styles.input}
+                                    value={values.house}
+                                    onChangeText={handleChange('house')}
+                                    placeholder="House"
+                                    onBlur={() => setFieldTouched('house')}
 
-                        <Button
-                            style={styles.button}
-                            title='Order'
-                            disabled={!isValid}
-                            onPress={handleSubmit}
-                        />
+                                />
+                                {touched.house && errors.house &&
+                                <Error>{errors.house}</Error>
+                                }
 
-                    </FormWrapper>
-                </TouchableWithoutFeedback>
+                                <Button
+                                    style={styles.button}
+                                    title='Order'
+                                    disabled={!isValid}
+                                    onPress={handleSubmit}
+                                />
+                            </ScrollView>
+                        </FormWrapper>
+                    </TouchableWithoutFeedback>
+                </KeyboardAvoidingView>
+
             )}
         </Formik>
 
@@ -179,5 +191,8 @@ const styles = StyleSheet.create({
     },
     button: {
         color: variables.primaryYellow
+    },
+    scrollKeyboard: {
+        // flex: 1
     }
 })
