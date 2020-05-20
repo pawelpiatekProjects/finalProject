@@ -82,7 +82,6 @@ export default function OrderForm({setData}) {
         >
             {({values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit}) => (
 
-                <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : null} style={styles.scrollKeyboard}>
                     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                         <FormWrapper>
                             <ScrollView>
@@ -173,7 +172,7 @@ export default function OrderForm({setData}) {
                             </ScrollView>
                         </FormWrapper>
                     </TouchableWithoutFeedback>
-                </KeyboardAvoidingView>
+
 
             )}
         </Formik>
@@ -192,7 +191,5 @@ const styles = StyleSheet.create({
     button: {
         color: variables.primaryYellow
     },
-    scrollKeyboard: {
-        // flex: 1
-    }
+
 })

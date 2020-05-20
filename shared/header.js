@@ -6,23 +6,17 @@ import {MaterialIcons} from '@expo/vector-icons';
 import * as variables from '../assets/variables';
 
 const HeaderWrapper = styled.View`
-  width: 100%;
-  height: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const HeaderContent = styled.View`
+width: 100%;
+flex-direction: row;
+position: relative;
+justify-content: center;
+align-items: center;
 
 `;
 
-const Text = styled.Text`
-  font-weight: bold;
-  font-size: 20px;
-  letter-spacing: 1px;
-  color: ${variables.white};
-`;
+
+
+
 
 
 
@@ -34,7 +28,7 @@ export default function Header({navigation}) {
 
     return(
         <HeaderWrapper>
-            <MaterialIcons name='menu' size={28} onPress={openMenu} style={styles.icon}/>
+            <MaterialIcons name='menu' size={35} onPress={openMenu} style={styles.icon}/>
         </HeaderWrapper>
     )
 }
@@ -42,7 +36,9 @@ export default function Header({navigation}) {
 const styles = StyleSheet.create({
     icon: {
         position: 'absolute',
-        left: 16,
-        color: variables.white
+        left: -70,
+        color: variables.white,
+        padding: 0,
+        margin: 0
     }
 })
