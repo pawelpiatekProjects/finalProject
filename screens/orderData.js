@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import OrderForm from '../components/orderForm';
 import {Header} from '../styles/globalStyle';
-import {Keyboard} from 'react-native';
+import {Keyboard , TouchableWithoutFeedback} from 'react-native';
 
-const OrderDataWrapper = styled.TouchableWithoutFeedback`
+const OrderDataWrapper = styled.View`
 
 `;
 
@@ -36,7 +36,7 @@ export default function OrderData({navigation}) {
     }
   return(
 
-      <OrderDataWrapper onPress={()=>Keyboard.dismiss()}>
+      <OrderDataWrapper>
           <Header>Order data</Header>
           <OrderForm setData={setData}/>
       </OrderDataWrapper>
