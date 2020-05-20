@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0192f99c-96d6-419e-9325-3fcb0f20f396" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/orderForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/orderForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/orderSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orderSummary.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +69,23 @@
       <workItem from="1589644913480" duration="3650000" />
       <workItem from="1589727593528" duration="2442000" />
       <workItem from="1589798550123" duration="5556000" />
-      <workItem from="1589985867681" duration="4142000" />
+      <workItem from="1589985867681" duration="5901000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1589986080403">

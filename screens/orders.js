@@ -3,6 +3,7 @@ import {View, Text} from 'react-native'
 import styled from 'styled-components';
 import {Header} from '../styles/globalStyle';
 import firebase from '../firebase';
+import Order from '../components/order';
 
 const db = firebase.database();
 
@@ -15,7 +16,7 @@ export default function Orders() {
 
     useEffect(()=>{
         fetch();
-    },[])
+    },)
 
     const fetch = async () =>{
         db.ref('/orders').once('value')
@@ -25,14 +26,15 @@ export default function Orders() {
                     return orders[el];
                 })
                 setData(arr);
+
             })
     }
-
+//todo: add loading annimation
     return(
         <OrdersWrapper>
             <Header>Orders</Header>
             {data.map(el=>(
-                <Text>{el.contactData.name}</Text>
+                <Order data={el}/>
             ))}
         </OrdersWrapper>
     )

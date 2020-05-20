@@ -37,7 +37,8 @@ export default function OrderSummary({navigation}) {
             key: key,
             burger: burger,
             price: price,
-            contactData: contactData
+            contactData: contactData,
+            date: new Date().toDateString()
         })
         navigation.navigate('OrderConfirm');
     }
