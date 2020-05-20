@@ -29,12 +29,19 @@ export default function Orders() {
 
             })
     }
+
+    const deleteOrder = (key) =>{
+        console.log(key)
+        let orderRef = db.ref(`orders/${key}`);
+        orderRef.remove();
+        fetch();
+    }
 //todo: add loading annimation
     return(
         <OrdersWrapper>
             <Header>Orders</Header>
             {data.map(el=>(
-                <Order data={el}/>
+                <Order data={el} press={deleteOrder}/>
             ))}
         </OrdersWrapper>
     )
