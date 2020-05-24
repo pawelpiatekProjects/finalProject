@@ -58,6 +58,7 @@ export default function Order({data, press}) {
 
     return (
         <OrderWrapper>
+
             <TouchableWithoutFeedback onPress={()=>setIsDetails(!isDetails)}>
                 <IntroContainer >
                     <Paragraph color={variables.primaryGrey}>{data.date}</Paragraph>

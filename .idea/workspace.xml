@@ -13,6 +13,7 @@
     <list default="true" id="0192f99c-96d6-419e-9325-3fcb0f20f396" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orders.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +70,7 @@
       <workItem from="1589985867681" duration="8312000" />
       <workItem from="1590062932551" duration="672000" />
       <workItem from="1590178088717" duration="600000" />
-      <workItem from="1590325843994" duration="4889000" />
+      <workItem from="1590325843994" duration="5131000" />
     </task>
     <servers />
   </component>

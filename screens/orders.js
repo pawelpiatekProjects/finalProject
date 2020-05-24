@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text} from 'react-native'
+import {ScrollView} from 'react-native'
 import styled from 'styled-components';
 import {Header} from '../styles/globalStyle';
 import firebase from '../firebase';
@@ -9,23 +9,23 @@ import Spinner from "../components/spinner";
 const db = firebase.database();
 
 const OrdersWrapper = styled.View`
-
+  margin-bottom: 30px;
 `;
 
 export default function Orders() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    useEffect(()=>{
+    useEffect(() => {
         fetch();
     },)
 
-    const fetch = async () =>{
+    const fetch = async () => {
 
         db.ref('/orders').once('value')
-            .then(snapshot=>{
+            .then(snapshot => {
                 const orders = snapshot.val();
-                const arr = Object.keys(orders).map(el=>{
+                const arr = Object.keys(orders).map(el => {
                     return orders[el];
                 })
                 setIsLoading(false);
@@ -34,26 +34,28 @@ export default function Orders() {
             })
     }
 
-    const deleteOrder = (key) =>{
+    const deleteOrder = (key) => {
         console.log(key)
         let orderRef = db.ref(`orders/${key}`);
         orderRef.remove();
         fetch();
     }
 //todo: add loading annimation
-    return(
-        <OrdersWrapper>
-            <Header>Orders</Header>
-            {isLoading ? (
-                <Spinner/>
-            ): (
-                data.map(el=>(
+    return (
+        <ScrollView>
+            <OrdersWrapper>
+                <Header>Orders</Header>
+
+                {isLoading ? (
+                    <Spinner/>
+                ) : (
+                    data.map(el => (
                         <Order data={el} press={deleteOrder}/>
                     ))
-            )}
+                )}
 
 
-
-        </OrdersWrapper>
+            </OrdersWrapper>
+        </ScrollView>
     )
 }
