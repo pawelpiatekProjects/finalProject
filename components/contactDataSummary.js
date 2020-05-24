@@ -1,8 +1,13 @@
+//-------------------------------
+// Component which is used in orderSummary screen.
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
 
-
+// styles
 const Title = styled.Text`
 font-size: 25px;
 font-weight: bold;
@@ -24,6 +29,8 @@ font-size: 16px;
 `;
 
 export default function ContactDataSummary({contactData}){
+
+    // returning and rendering components on the screen
     return(
         <ContactDataSummaryWrapper>
             <Title>Contact data</Title>

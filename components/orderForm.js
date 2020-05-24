@@ -1,3 +1,8 @@
+//-------------------------------
+// Contact data form
+//-------------------------------
+
+// imports
 import React, {Component, Fragment} from 'react';
 import {
     TextInput,
@@ -10,13 +15,11 @@ import {
 } from 'react-native';
 import styled from 'styled-components';
 import {Formik} from "formik";
-
 import * as variables from '../assets/variables';
 import * as yup from 'yup';
-
 import TextButton from '../components/textButton';
 
-
+// styles
 const FormWrapper = styled.View`
   background-color: ${variables.white};
   height: 100%;
@@ -33,12 +36,10 @@ const Error = styled.Text`
   width: 100%;
 `;
 
-const onSubmit = (values) => {
-    console.log(values)
-}
-//todo: add disabliing keyboard in form after clicking on screen
-//todo: eneble scrolling in form
+
 export default function OrderForm({setData}) {
+
+    // returning and rendering Formik form
     return (
         <Formik
             initialValues={{
@@ -53,6 +54,7 @@ export default function OrderForm({setData}) {
             onSubmit={values => {
                 setData(values);
             }}
+            // yup validation
             validationSchema={yup.object().shape({
                 email: yup
                     .string()
@@ -180,7 +182,7 @@ export default function OrderForm({setData}) {
     )
 }
 
-
+// another styles
 const styles = StyleSheet.create({
     input: {
         borderBottomColor: variables.secondaryGrey,

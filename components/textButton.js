@@ -1,6 +1,12 @@
+//-------------------------------
+// Second custom button component
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 
+//styles
 const TextButtonWrapper = styled.TouchableOpacity`
 width: 100%;
 `;

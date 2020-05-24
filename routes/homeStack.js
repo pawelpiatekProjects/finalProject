@@ -1,7 +1,10 @@
-import React from 'react';
+//-------------------------------
+// Home stack - stack navigation which is used in drawer navigation
+//-------------------------------
 
+// imports
+import React from 'react';
 import {createStackNavigator} from "react-navigation-stack";
-import {createAppContainer} from "react-navigation";
 import * as variables from '../assets/variables';
 import Home from '../screens/home';
 import BurgerBuilder from '../screens/burgerBuilder';

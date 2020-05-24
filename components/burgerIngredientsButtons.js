@@ -1,3 +1,8 @@
+//-------------------------------
+// Component which contains buttons which are used in burgerIngredients component
+//-------------------------------
+
+// imports
 import React from 'react';
 
 import {TouchableOpacity} from 'react-native';
@@ -5,7 +10,7 @@ import styled from 'styled-components';
 import {AntDesign} from '@expo/vector-icons';
 import * as variables from '../assets/variables';
 
-
+// styles
 const Wrapper = styled.View`
 width: 80%;
 ;
@@ -58,6 +63,8 @@ const buttonSize = 30;
 
 export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese, removeCheese, addSalad, removeSalad,
                                                      addBacon, removeBacon}) {
+
+    // returning and rendering components on the screen
     return (
         <Wrapper>
             <HeaderBig>Ingredients</HeaderBig>

@@ -1,3 +1,8 @@
+//-------------------------------
+// Component contains ingredients's styles
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 

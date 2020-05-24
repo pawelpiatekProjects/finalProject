@@ -1,12 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import {ScrollView, Button} from 'react-native';
+//-------------------------------
+// Component which is used to adding and removing ingredients in burger
+//-------------------------------
+
+// imports
+import React from 'react';
+import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import BurgerIngredientsButtons from '../components/burgerIngredientsButtons';
 import {BurgerBottom, BurgerTop, Meat, Cheese, Salad, Bacon} from './ingredients';
-import * as variables from '../assets/variables';
-import {set} from "react-native-reanimated";
 
 
+// styles
 const BurgerIngredientsWrapper = styled.View`
 
 `;
@@ -26,14 +30,12 @@ export default function BurgerIngredients({bacon, addBacon, removeBacon,
                                               cheese, addCheese, removeCheese, salad, addSalad, removeSalad,
                                               meat, addMeat, removeMeat, price}) {
 
+
+    // arrays which contain ingredients
     const meatArr = [];
     const cheeseArr = [];
     const baconArr = [];
     const saladArr = [];
-
-
-
-
 
     for (let i = 0; i < meat; i++) {
         meatArr.push(<Meat key={Math.random() * i}/>)
@@ -58,7 +60,8 @@ export default function BurgerIngredients({bacon, addBacon, removeBacon,
     if (salad > 0 || cheese > 0 || bacon > 0 || meat > 0) {
         ingredients = null;
     }
-//todo: fix price
+
+    // returning and rendering components on the screen
     return (
 
         <BurgerIngredientsWrapper>

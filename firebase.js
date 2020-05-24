@@ -1,3 +1,8 @@
+//-------------------------------
+// Firebase configuration
+//-------------------------------
+
+
 import firebase from 'firebase';
 
 const config = {
@@ -11,4 +16,5 @@ const config = {
     measurementId: "G-XC17VTXJ6P"
 };
 
+// creating firebase
 export default !firebase.apps.length ? firebase.initializeApp(config) : firebase.app();

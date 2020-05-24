@@ -1,8 +1,13 @@
+//-------------------------------
+// Custom button component
+//-------------------------------
+
+// imports
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
 
+// styles
 const ButtonWrapper = styled.TouchableOpacity`
 background-color: ${variables.white};
 border: 4px solid ${variables.primaryYellow};
@@ -19,6 +24,8 @@ font-size: 20px;
 `;
 
 export default function Button({text, press}) {
+
+    // returning and rendering components on the screen
     return(
         <ButtonWrapper onPress={press}>
             <Text>{text}</Text>

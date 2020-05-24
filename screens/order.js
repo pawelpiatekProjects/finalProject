@@ -1,3 +1,8 @@
+//-------------------------------
+// Screen with contains final Burger preview
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 import {BurgerBottom, BurgerTop, Meat, Cheese, Salad, Bacon} from '../components/ingredients';
@@ -5,7 +10,7 @@ import CustomButon from '../components/button';
 import {Header}  from '../styles/globalStyle';
 
 
-
+// styles
 const OrderWrapper = styled.View`
 
 `;
@@ -21,9 +26,11 @@ margin: 20px auto;
 
 export default function Order({navigation}) {
 
+    // params which are passed from BurgerBuilder screen
     const burger = navigation.getParam('burger');
     const price = navigation.getParam('price');
 
+    // arrays which contain ingredients
     const meatArr = [];
     const cheeseArr = [];
     const baconArr = [];
@@ -45,6 +52,7 @@ export default function Order({navigation}) {
         saladArr.push(<Bacon/>)
     }
 
+    // method which passes burger data and price to OrderData screen
     const purchase = ()=>{
         navigation.navigate('OrderData', {
             burger: burger,
@@ -53,6 +61,7 @@ export default function Order({navigation}) {
 
     }
 
+    // returning and rendering components on the screen
     return(
         <OrderWrapper>
             <Header>Your Order</Header>
@@ -62,7 +71,7 @@ export default function Order({navigation}) {
             {baconArr}
             {saladArr}
             <BurgerBottom/>
-            <Price>{price}.0$</Price>
+            <Price>{price}$</Price>
             <CustomButon text="Purchase" press={purchase}/>
         </OrderWrapper>
     )

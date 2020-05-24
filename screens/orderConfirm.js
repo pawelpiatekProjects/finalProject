@@ -1,7 +1,13 @@
+//-------------------------------
+// Screen with order confirmation
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
 
+//styles
 const OrderConfirmWrapper = styled.View`
 height: 100%;
 align-items: center;
@@ -34,10 +40,12 @@ const Button = styled.Button`
 
 export default function OrderConfirm({navigation}){
 
+    // method which redirects us to Home screen
     const backToStart = () =>{
         navigation.navigate('Home')
     }
 
+    // returning and rendering components on the screen
     return(
         <OrderConfirmWrapper>
             <Modal>

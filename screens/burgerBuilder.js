@@ -1,3 +1,9 @@
+//-------------------------------
+// Screen with burger building mechanisms
+//-------------------------------
+
+
+// imports
 import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
@@ -5,6 +11,7 @@ import BurgerIngredients from '../components/burgerIngredients';
 import * as variables from '../assets/variables';
 import TextButton from "../components/textButton";
 
+// styles
 const Container = styled.View`
 height: 100%;
 margin: -30px 0;
@@ -14,6 +21,8 @@ margin: -30px 0;
 
 export default function BurgerBuilder({navigation}) {
 
+
+    // method which passes data about order and price to the 'Order' screen
     const order = () => {
         if(price>0){
             navigation.navigate('Order', {
@@ -29,6 +38,7 @@ export default function BurgerBuilder({navigation}) {
 
     }
 
+    // setting burger ingredients to 0 at the beginning of component's lifecicle.
     useEffect(()=>{
         setPrice(0);
         setBacon(0);
@@ -37,12 +47,14 @@ export default function BurgerBuilder({navigation}) {
         setSalad(0);
     },[])
 
+    // current state of ingredients
     const [meat, setMeat] = useState(0);
     const [cheese, setCheese] = useState(0);
     const [salad, setSalad] = useState(0);
     const [bacon, setBacon] = useState(0);
     const [price,setPrice] = useState(0);
 
+    // methods which are responsible for adding and removing ingredients
     const addMeat = () =>{
             setMeat(prevMeat => prevMeat +1);
             setPrice(prevPrice => prevPrice + 2)
@@ -94,7 +106,7 @@ export default function BurgerBuilder({navigation}) {
 
     }
 
-
+    // returning and rendering components on the screen
     return (
         <Container>
             <ScrollView>
@@ -113,7 +125,6 @@ export default function BurgerBuilder({navigation}) {
                     removeBacon={removeBacon}
                     price={price}
                 />
-                {/*todo: set disabled*/}
                 <TextButton text="Order" press={order} color={variables.primaryGrey} fontSize={25}/>
             </ScrollView>
         </Container>

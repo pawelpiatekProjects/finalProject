@@ -1,9 +1,14 @@
+//-------------------------------
+// Home screen
+//-------------------------------
+
+// imports
 import React from 'react';
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
 import TextButton from '../components/textButton';
 
-
+// styles
 const Container = styled.View`
 background-color: ${variables.white};
 height: 100%;
@@ -42,16 +47,16 @@ justify-content: center;
 opacity: .8;
 `;
 
-const Button = styled.Button`
-
-`;
 
 
 export default function Home({navigation}) {
 
+    // method which redirects us to 'BurgerBuilder' screen
     const buttonOnPress = () => {
         navigation.navigate('BurgerBuilder');
     }
+
+    // returning and rendering components on the screen
     return (
         <Container>
             <ImageWrapper>
@@ -60,7 +65,6 @@ export default function Home({navigation}) {
 
             <Wrapper>
                 <Title>Create and order your dream burger with our app </Title>
-                {/*<Button title='Create' onPress={buttonOnPress} color={variables.primaryYellow}/>*/}
                 <TextButton text="Create" color={variables.primaryYellow} fontSize={25} press={buttonOnPress}/>
             </Wrapper>
 

@@ -1,3 +1,8 @@
+//-------------------------------
+// File which contains global variables
+//-------------------------------
+
+
 //colors
 export const white = '#fff';
 export const primaryGrey = 'rgba(51, 51, 51, 1)';

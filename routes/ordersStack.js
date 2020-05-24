@@ -1,3 +1,8 @@
+//-------------------------------
+// Orders stack - stack navigation which is used in drawer navigation
+//-------------------------------
+
+// imports
 import React from 'react';
 import {createStackNavigator} from "react-navigation-stack";
 import * as variables from '../assets/variables';

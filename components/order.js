@@ -1,3 +1,8 @@
+//-------------------------------
+// Single order from orders screen component
+//-------------------------------
+
+// imports
 import React,{useState} from 'react';
 import {TouchableWithoutFeedback} from "react-native";
 import styled from 'styled-components';
@@ -5,7 +10,7 @@ import * as variables from '../assets/variables';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 
-
+// styles
 const OrderWrapper = styled.View`
 margin-top: 30px;
 `;
@@ -49,13 +54,18 @@ margin-bottom: 10px;
 `
 
 export default function Order({data, press}) {
+
+    // state which is used to opening and closing order's details
     const [isDetails, setIsDetails] = useState(false);
+
+    // changing caret icon
     let caretName = 'caretdown';
 
     if(!isDetails){
         caretName='caretright'
     }
 
+    // returning and rendering components on the screen
     return (
         <OrderWrapper>
 
@@ -66,6 +76,7 @@ export default function Order({data, press}) {
                 </IntroContainer>
             </TouchableWithoutFeedback>
 
+            {/*Order's details*/}
             {
                 isDetails ? (
                     <DetailsContainer>
