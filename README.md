@@ -1,7 +1,7 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 
 <h2 align="center">
- Covid-19 tracker
+ Final project - Burger App
 </h2>
 
 ***
