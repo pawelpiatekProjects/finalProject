@@ -65,7 +65,7 @@ export default function Orders() {
                     <Spinner/>
                 ) : (
                     data.map(el => (
-                        <Order data={el} press={deleteOrder}/>
+                        <Order key={el.id} data={el} press={deleteOrder}/>
                     ))
                 )}
 

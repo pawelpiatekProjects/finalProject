@@ -11,34 +11,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0192f99c-96d6-419e-9325-3fcb0f20f396" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/readmeImages/screen9.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/344-3449103_bun-bread-bottom-hd-png-download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/amirali-mirhashemian-jh5XyK4Rr3Y-unsplash.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/unnamed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/variables.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/variables.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/burgerIngredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/burgerIngredients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/burgerIngredientsButtons.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/burgerIngredientsButtons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/burgerSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/burgerSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/button.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/button.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/contactDataSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/contactDataSummary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/ingredients.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/orderForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/orderForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/spinner.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/spinner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/textButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/textButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/drawer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/drawer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/homeStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/homeStack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/ordersStack.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/ordersStack.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/burgerBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/burgerBuilder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/orderConfirm.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orderConfirm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/orderData.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orderData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/orderSummary.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orderSummary.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/shared/header.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +39,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../typescript/netNinja/typescript-tutorial" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../react/covid19" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,6 +55,7 @@
       <recent name="D:\Users\pawel\Documents\www\react-native\mainapp\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\pawel\Documents\www\react-native\mainapp\assets\readmeImages" />
       <recent name="D:\Users\pawel\Documents\www\react-native\mainapp\assets" />
     </key>
   </component>
@@ -95,7 +79,7 @@
       <workItem from="1589985867681" duration="8312000" />
       <workItem from="1590062932551" duration="672000" />
       <workItem from="1590178088717" duration="600000" />
-      <workItem from="1590325843994" duration="9346000" />
+      <workItem from="1590325843994" duration="10684000" />
     </task>
     <servers />
   </component>
@@ -115,10 +99,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590178148438">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590338594986">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1590178148438" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1590338594986" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589992322308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
