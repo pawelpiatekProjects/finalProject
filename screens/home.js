@@ -4,23 +4,32 @@ import * as variables from '../assets/variables';
 
 
 const Container = styled.View`
-
+background-color: ${variables.white};
+height: 100%;
+width: 100%;
+position: relative;
 `;
 
-const TitleBig = styled.Text`
+const Title = styled.Text`
+padding: 30px 50px;
 text-align: center;
-font-size: 40px;
-color: ${variables.white};
+font-size: 20px;
+color: ${variables.primaryGrey};
 `;
 
-const TitleSmall = styled.Text`
+
+
+const ImageWrapper = styled.View`
+width: 100%;
+padding: 50px;
+margin: 50px auto;
+height: 300px;
+
+`;
+
+const Img = styled.Image`
 text-align: center;
-font-size: 40px;
-color: ${variables.primaryYellow};
-`;
-
-const Img = styled.ImageBackground`
-
+margin: 0 auto;
 
 `;
 
@@ -28,7 +37,7 @@ const Wrapper = styled.View`
 flex: 1;
 align-items: center;
 justify-content: center;
-background-color: ${variables.primaryGrey};
+
 opacity: .8;
 `;
 
@@ -37,21 +46,22 @@ const Button = styled.Button`
 `;
 
 
-
 export default function Home({navigation}) {
 
-    const buttonOnPress = () =>{
+    const buttonOnPress = () => {
         navigation.navigate('BurgerBuilder');
     }
     return (
         <Container>
-            <Img source={require('../assets/unnamed.png')} style={{width: '100%', height: '100%'}}>
-                <Wrapper>
-                    <TitleBig>Create your </TitleBig>
-                    <TitleSmall>Burger</TitleSmall>
-                    <Button title='Create' onPress={buttonOnPress}/>
-                </Wrapper>
-            </Img>
+            <ImageWrapper>
+                <Img source={require('../assets/logo.png')} style={{width: 250, height: 330}}/>
+            </ImageWrapper>
+
+            <Wrapper>
+                <Title>Create and order your dream burger with our app </Title>
+                <Button title='Create' onPress={buttonOnPress} color={variables.primaryYellow}/>
+            </Wrapper>
+
 
         </Container>
     )

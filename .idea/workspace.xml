@@ -11,9 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0192f99c-96d6-419e-9325-3fcb0f20f396" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../first-native" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../typescript/netNinja/typescript-tutorial" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -43,10 +43,10 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Users\pawel\Documents\www\react-native\mainapp\assets" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\pawel\Documents\www\react-native\mainapp\assets" />
     </key>
   </component>
@@ -67,7 +67,10 @@
       <workItem from="1589644913480" duration="3650000" />
       <workItem from="1589727593528" duration="2442000" />
       <workItem from="1589798550123" duration="5556000" />
-      <workItem from="1589985867681" duration="7048000" />
+      <workItem from="1589985867681" duration="8312000" />
+      <workItem from="1590062932551" duration="672000" />
+      <workItem from="1590178088717" duration="600000" />
+      <workItem from="1590325843994" duration="1499000" />
     </task>
     <servers />
   </component>
@@ -84,12 +87,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1589986080403">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1590178148438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1589986080403" />
+    <state x="740" y="275" key="FileChooserDialogImpl/-1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1590178148438" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1589992322308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
