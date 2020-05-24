@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
+import TextButton from '../components/textButton';
 
 
 const Container = styled.View`
@@ -59,7 +60,8 @@ export default function Home({navigation}) {
 
             <Wrapper>
                 <Title>Create and order your dream burger with our app </Title>
-                <Button title='Create' onPress={buttonOnPress} color={variables.primaryYellow}/>
+                {/*<Button title='Create' onPress={buttonOnPress} color={variables.primaryYellow}/>*/}
+                <TextButton text="Create" color={variables.primaryYellow} fontSize={25} press={buttonOnPress}/>
             </Wrapper>
 
 
