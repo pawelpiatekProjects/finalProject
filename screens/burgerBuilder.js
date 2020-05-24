@@ -2,10 +2,12 @@ import React, {useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
 import styled from 'styled-components';
 import BurgerIngredients from '../components/burgerIngredients';
-import CustomButton from '../components/button';
+import * as variables from '../assets/variables';
+import TextButton from "../components/textButton";
 
 const Container = styled.View`
 height: 100%;
+margin: -30px 0;
 `;
 
 
@@ -109,7 +111,7 @@ export default function BurgerBuilder({navigation}) {
                     price={price}
                 />
                 {/*todo: set disabled*/}
-                <CustomButton text="Order" press={order}/>
+                <TextButton text="Order" press={order} color={variables.primaryGrey} fontSize={25}/>
             </ScrollView>
         </Container>
     )

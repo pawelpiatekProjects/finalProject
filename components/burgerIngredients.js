@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import BurgerIngredientsButtons from '../components/burgerIngredientsButtons';
 import {BurgerBottom, BurgerTop, Meat, Cheese, Salad, Bacon} from './ingredients';
 import * as variables from '../assets/variables';
+import {set} from "react-native-reanimated";
 
 
 const BurgerIngredientsWrapper = styled.View`
@@ -30,20 +31,24 @@ export default function BurgerIngredients({bacon, addBacon, removeBacon,
     const baconArr = [];
     const saladArr = [];
 
+
+
+
+
     for (let i = 0; i < meat; i++) {
-        meatArr.push(<Meat/>)
+        meatArr.push(<Meat key={Math.random() * i}/>)
     }
 
     for (let i = 0; i < cheese; i++) {
-        cheeseArr.push(<Cheese/>)
+        cheeseArr.push(<Cheese key={Math.random() * i}/>)
     }
 
     for (let i = 0; i < salad; i++) {
-        baconArr.push(<Salad/>)
+        baconArr.push(<Salad key={Math.random() * i}/>)
     }
 
     for (let i = 0; i < bacon; i++) {
-        saladArr.push(<Bacon/>)
+        saladArr.push(<Bacon key={Math.random() * i}/>)
     }
 
 

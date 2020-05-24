@@ -7,8 +7,12 @@ import * as variables from '../assets/variables';
 
 
 const Wrapper = styled.View`
-margin-top: 50px;
-background-color: ${variables.primaryYellow};
+width: 80%;
+;
+margin: 50px auto 10px auto;
+border-color: ${variables.primaryGrey};
+border-width: 5px;
+background-color: ${variables.white};
 padding:  10px 30px 30px 30px;
 `;
 
@@ -16,7 +20,7 @@ const HeaderBig = styled.Text`
 text-align: center;
 padding: 30px;
 font-size: 20px;
-color: ${variables.white};
+color: ${variables.primaryGrey};
 font-weight: bold;
 `;
 
@@ -63,12 +67,12 @@ export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese
                     <ButtonsRow>
                         <Button>
                             <TouchableOpacity onPress={removeMeat}>
-                                <AntDesign name="minus" size={buttonSize} color="black"/>
+                                <AntDesign name="minus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                         <Button>
                             <TouchableOpacity onPress={addMeat}>
-                                <AntDesign name="plus" size={buttonSize} color="black"/>
+                                <AntDesign name="plus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                     </ButtonsRow>
@@ -78,12 +82,12 @@ export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese
                     <ButtonsRow>
                         <Button>
                             <TouchableOpacity onPress={removeCheese}>
-                                <AntDesign name="minus" size={buttonSize} color="black"/>
+                                <AntDesign name="minus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                         <Button>
                             <TouchableOpacity onPress={addCheese}>
-                                <AntDesign name="plus" size={buttonSize} color="black"/>
+                                <AntDesign name="plus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                     </ButtonsRow>
@@ -93,12 +97,12 @@ export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese
                     <ButtonsRow>
                         <Button>
                             <TouchableOpacity onPress={removeBacon}>
-                                <AntDesign name="minus" size={buttonSize} color="black"/>
+                                <AntDesign name="minus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                         <Button>
                             <TouchableOpacity onPress={addBacon}>
-                                <AntDesign name="plus" size={buttonSize} color="black"/>
+                                <AntDesign name="plus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                     </ButtonsRow>
@@ -108,12 +112,12 @@ export default function BurgerIngredientsButtons({addMeat, removeMeat, addCheese
                     <ButtonsRow>
                         <Button>
                             <TouchableOpacity onPress={removeSalad}>
-                                <AntDesign name="minus" size={buttonSize} color="black"/>
+                                <AntDesign name="minus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                         <Button>
                             <TouchableOpacity onPress={addSalad}>
-                                <AntDesign name="plus" size={buttonSize} color="black"/>
+                                <AntDesign name="plus" size={buttonSize} color={variables.primaryYellow}/>
                             </TouchableOpacity>
                         </Button>
                     </ButtonsRow>
