@@ -9,9 +9,12 @@ justify-content: center;
 `;
 
 const Modal = styled.View`
+padding: 5px;
+border-width: 5px;
+border-color: ${variables.primaryGrey};
 background-color: ${variables.white};
 height: 50%;
-width: 90%;
+width: 80%;
 align-items: center;
 justify-content: center;
 
@@ -39,7 +42,7 @@ export default function OrderConfirm({navigation}){
         <OrderConfirmWrapper>
             <Modal>
                 <Header>Thank you for Order!!!</Header>
-                <Button title="Home" onPress={backToStart} color={variables.primaryYellow}/>
+                <Button title="Home" onPress={backToStart} color={variables.primaryGrey}/>
             </Modal>
         </OrderConfirmWrapper>
     )

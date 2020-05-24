@@ -5,6 +5,7 @@ import CustomButon from '../components/button';
 import {Header}  from '../styles/globalStyle';
 
 
+
 const OrderWrapper = styled.View`
 
 `;
@@ -61,7 +62,7 @@ export default function Order({navigation}) {
             {baconArr}
             {saladArr}
             <BurgerBottom/>
-            <Price>{price}0$</Price>
+            <Price>{price}.0$</Price>
             <CustomButon text="Purchase" press={purchase}/>
         </OrderWrapper>
     )

@@ -15,15 +15,18 @@ margin: -30px 0;
 export default function BurgerBuilder({navigation}) {
 
     const order = () => {
-        navigation.navigate('Order', {
-            burger: {
-                meat: meat,
-                cheese: cheese,
-                salad: salad,
-                bacon: bacon,
-            },
-            price: price
-        });
+        if(price>0){
+            navigation.navigate('Order', {
+                burger: {
+                    meat: meat,
+                    cheese: cheese,
+                    salad: salad,
+                    bacon: bacon,
+                },
+                price: price
+            });
+        }
+
     }
 
     useEffect(()=>{
