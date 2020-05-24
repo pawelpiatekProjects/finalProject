@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import {TouchableWithoutFeedback} from "react-native";
 import styled from 'styled-components';
 import * as variables from '../assets/variables';
 import { AntDesign } from '@expo/vector-icons';
@@ -19,6 +20,7 @@ font-weight: bold;
 
 font-size: 20px;
 `;
+
 
 const IntroContainer = styled.View`
 padding: 20px;
@@ -56,10 +58,13 @@ export default function Order({data, press}) {
 
     return (
         <OrderWrapper>
-            <IntroContainer>
-                <Paragraph color={variables.primaryGrey}>{data.date}</Paragraph>
-                <AntDesign name={caretName} size={20} color="black" onPress={()=>setIsDetails(!isDetails)}/>
-            </IntroContainer>
+            <TouchableWithoutFeedback onPress={()=>setIsDetails(!isDetails)}>
+                <IntroContainer >
+                    <Paragraph color={variables.primaryGrey}>{data.date}</Paragraph>
+                    <AntDesign name={caretName} size={20} color="black" />
+                </IntroContainer>
+            </TouchableWithoutFeedback>
+
             {
                 isDetails ? (
                     <DetailsContainer>
