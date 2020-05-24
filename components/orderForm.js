@@ -12,19 +12,17 @@ import styled from 'styled-components';
 import {Formik} from "formik";
 
 import * as variables from '../assets/variables';
+import * as yup from 'yup';
 
-import * as yup from 'yup'
+import TextButton from '../components/textButton';
 
 
 const FormWrapper = styled.View`
   background-color: ${variables.white};
-  
+  height: 100%;
 padding: 30px;
 `;
 
-const ButtonContainer = styled.Button`
-margin-top: 30px;
-`;
 
 
 const Error = styled.Text`
@@ -164,11 +162,12 @@ export default function OrderForm({setData}) {
                                 <Error>{errors.house}</Error>
                                 }
 
-                                <Button
-                                    style={styles.button}
-                                    title='Order'
+                                <TextButton
+                                    text='Order'
                                     disabled={!isValid}
-                                    onPress={handleSubmit}
+                                    press={handleSubmit}
+                                    fontSize={25}
+                                    color={variables.primaryYellow}
                                 />
                             </ScrollView>
                         </FormWrapper>
@@ -184,10 +183,13 @@ export default function OrderForm({setData}) {
 
 const styles = StyleSheet.create({
     input: {
-        borderBottomColor: variables.primaryYellow,
+        borderBottomColor: variables.secondaryGrey,
+        color: variables.primaryYellow,
         borderBottomWidth: 3,
         marginHorizontal: 30,
-        marginVertical: 30
+        marginVertical: 30,
+        paddingBottom: 5,
+
     },
     button: {
         color: variables.primaryYellow

@@ -3,9 +3,11 @@ import styled from 'styled-components';
 import OrderForm from '../components/orderForm';
 import {Header} from '../styles/globalStyle';
 import {Keyboard , TouchableWithoutFeedback} from 'react-native';
+import * as variables from '../assets/variables';
 
 const OrderDataWrapper = styled.View`
-
+background: ${variables.white};
+height: 100%;
 `;
 
 
