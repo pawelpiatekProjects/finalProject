@@ -69,7 +69,7 @@ User can create and order burger. User can also show list of all ordered burgers
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd covid19/
+    cd mainapp/
     npm start
     ```
 
